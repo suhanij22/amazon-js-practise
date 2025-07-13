@@ -1,4 +1,5 @@
 const products=[{
+    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image:'images/athletic-cotton-socks-6-pairs.jpg',
     name:'Black and Gray Athletic Cotton Socks -6 Pairs',
     rating:{
@@ -7,6 +8,7 @@ const products=[{
     },
     pricecent:1090
 },{
+     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
     image:'images/intermediate-composite-Basketball.jpg',
     name:'Intermediate-Composite-Basketball',
     rating:{
@@ -15,6 +17,7 @@ const products=[{
     },
     pricecent:2095
 },{
+    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
     image:'images/adults-plain-cotton-tshirt-2-pack-teal.jpg',
     name:'adults-plain-cotton-tshirt-2-pack-teal',
     rating:{
@@ -44,12 +47,34 @@ products.forEach((product)=>
        <option value="10">10</option>
       </select>
     </div>
-    <div class="choose"><button class="add">Add to Cart</button></div>
+    <div class="choose"><button class="add" data-product-id="${product.id}">Add to Cart</button></div>
     </div>
     </div>`;
 
 });
 document.querySelector('.gridjs').innerHTML=productHTML;
-
-console.log(productHTML);
 document.title='amazon';
+
+document.querySelectorAll('.add').forEach((button)=>{
+    button.addEventListener('click',()=>{
+        const productId = button.dataset.productId;
+
+    let matchingitem;
+    cart.forEach((item)=>{
+        if(item.productId===productId)
+        {
+            matchingitem=item;
+        }
+    });
+    if(matchingitem){
+        matchingitem.quantity+=1;
+    }
+    else{
+        cart.push({
+            productId: productId,
+            quantity: 1
+        });
+    }
+     console.log(cart);
+});
+});
