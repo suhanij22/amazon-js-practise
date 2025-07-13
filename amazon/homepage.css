@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+}
+.amazonimg{
+    display: block;
+    position: relative;
+    top: 12px;
+    left: 30px;
+    transition: border ease;
+
+}
+.amazonimg:hover{
+    border: 1px solid white;
+}
+.search{
+    height: 44px;
+    width: 720px;
+    position: relative;
+    left: 40px;
+    top: 13px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+}
+.searchicon{
+    height: 46px;
+    width: 49px;
+    background-color: orange;
+    position: relative;
+    left: 807px;
+    top: 13px;
+    border-radius: 5px ;
+}
+.icon{
+    position: relative;
+    top: 5px;
+    left: 8px;
+}
+.return{
+    color: white;
+    display: block;
+    height: 50px;
+    width: 69px;
+    word-wrap: break-word;
+    position: relative;
+    left: 112px;
+    top: 15px;
+    font-size: large;
+    transition: border ease;
+}
+.return:hover{
+    border: 1px solid white;
+}
+.cartbox{
+position: relative;
+left: 130px;
+top: 3px;
+color: white;
+font-size: 20px;
+transition: border ease;
+height: 60px;
+}
+.cartbox:hover{
+    border: 1px solid white;
+}
+.cart{
+    color: orange;
+    font-weight: bold;
+    display: block;
+    height: 12px;
+    width: 14px;
+    position: relative;
+    left: 28px;
+    top: 6px;
+    padding: 0%;
+    margin: 0%;
+    font-size: 25px;
+}
+.main{
+    margin-top: 70px;
+}
+.productgrid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.item{
+     padding-top: 40px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 400px;
+  border-right: 1px solid rgba(128, 128, 128, 0.348);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.348);
+}
+.text{
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.rating
+{
+    margin-top: 5px;
+}
+.comment{
+    position: relative;
+    top:  -3px;
+    left: 14px;
+    font-size: 18px;
+    color: blue;
+}
+
+.price
+{
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 18px;
+}
+.quantity{
+    margin-top: 9px;
+}
+.quantity1{
+    background-color: rgba(128, 128, 128, 0.194);
+    border-radius: 3px;
+    border: 1px solid gray;
+    height: 24px;
+    font-size: 17px;
+}
+.choose
+{
+    margin-top: 34px;
+    margin-left: 12px;
+}
+.add{
+    height: 33px;
+    background-color: rgb(235, 178, 74);
+    border: none;
+    border-radius: 50px;
+    width: 160px;
+    font-size: 17px;
+}

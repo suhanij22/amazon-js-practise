@@ -1,0 +1,95 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+}
+.head{
+    height: 70px;
+    display: flex;
+    gap: 310px;
+}
+.title{
+    font-size: 25px;
+    position: relative;
+    top: 7px; 
+    font-weight: bold;
+}
+.lock{
+    position: relative;
+    top: 8px;
+    left: 105px;
+}
+.title1{
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.main{
+    display: flex;
+    margin-top: 14px;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+.t1,.t3{
+    height: 280px;
+    width: 780px;
+    border: 1px solid rgba(128, 128, 128, 0.348);
+    border-radius: 4px;
+}
+.t2{
+    height: 300px;
+    width: 300px;
+    border: 1px solid rgba(128, 128, 128, 0.348);
+     border-radius: 4px;
+}
+.t3{
+    margin-top: -18px;
+}
+.head1{
+    margin-left: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: green;
+}
+.item{
+    display: grid;
+    grid-template-columns: 150px 300px 250px;
+    font-size: 17px;
+    gap: 17px;
+}
+.para{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    margin-bottom: 14px;
+    margin-left: 10px;
+    color: rgba(27, 25, 25, 0.511);
+}
+.option{
+    color: green;
+}
+.image{
+    margin-left: 15px;
+}
+.price{
+    text-align: right;  
+    margin-right: 8px;
+}
+.summaryrow{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 10px;
+    margin-left: 7px;
+}
+.ordertotal{
+    font-size: large;
+    color: darkred;
+    font-weight: bold;
+}
+.placeorder{
+    width: 200px;
+    height: 33px;
+    margin: 3px 50px 0px 50px;
+    background-color: rgb(235, 178, 74);
+    border: none;
+    border-radius: 7px;
+}
