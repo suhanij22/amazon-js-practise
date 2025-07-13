@@ -34,7 +34,7 @@ products.forEach((product)=>
     productHTML+=`<div class="item"><img src="${product.image}" height="190px">
     <div class="text">${product.name}</div>
     <div class="rating"><img src="images/rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span><div class="price">$${(product.pricecent/100).toFixed(2)}</div><div class="quantity">
-      <select name="select quantity" class="quantity1">
+      <select name="select quantity" class="quantity1-${product.id}">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -58,7 +58,6 @@ document.title='amazon';
 document.querySelectorAll('.add').forEach((button)=>{
     button.addEventListener('click',()=>{
         const productId = button.dataset.productId;
-
     let matchingitem;
     cart.forEach((item)=>{
         if(item.productId===productId)
@@ -66,15 +65,23 @@ document.querySelectorAll('.add').forEach((button)=>{
             matchingitem=item;
         }
     });
+    const quantityselector = document.querySelector(`.quantity1-${productId}`);
+    const quan1=Number(quantityselector.value);
     if(matchingitem){
-        matchingitem.quantity+=1;
+        matchingitem.quantity+= quan1;
     }
     else{
         cart.push({
             productId: productId,
-            quantity: 1
+            quantity: quan1
         });
     }
+    let cartquantity = 0;
      console.log(cart);
+     cart.forEach((item)=>{
+        cartquantity+=item.quantity;
+});
+console.log(cartquantity);
+document.querySelector('.cart').innerText = cartquantity;
 });
 });
