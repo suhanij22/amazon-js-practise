@@ -1,5 +1,5 @@
 const products=[{
-    image:'athletic-cotton-socks-6-pairs.jpg',
+    image:'images/athletic-cotton-socks-6-pairs.jpg',
     name:'Black and Gray Athletic Cotton Socks -6 Pairs',
     rating:{
         stars:4.0,
@@ -7,7 +7,7 @@ const products=[{
     },
     pricecent:1090
 },{
-    image:'intermediate-composite-Basketball.jpg',
+    image:'images/intermediate-composite-Basketball.jpg',
     name:'Intermediate-Composite-Basketball',
     rating:{
         stars:3.5,
@@ -15,7 +15,7 @@ const products=[{
     },
     pricecent:2095
 },{
-    image:'adults-plain-cotton-tshirt-2-pack-teal.jpg',
+    image:'images/adults-plain-cotton-tshirt-2-pack-teal.jpg',
     name:'adults-plain-cotton-tshirt-2-pack-teal',
     rating:{
         stars:4.5,
@@ -30,7 +30,7 @@ products.forEach((product)=>
 {
     productHTML+=`<div class="item"><img src="${product.image}" height="190px">
     <div class="text">${product.name}</div>
-    <div class="rating"><img src="rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span><div class="price">$${(product.pricecent/100).toFixed(2)}</div><div class="quantity">
+    <div class="rating"><img src="images/rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span><div class="price">$${(product.pricecent/100).toFixed(2)}</div><div class="quantity">
       <select name="select quantity" class="quantity1">
       <option value="1">1</option>
       <option value="2">2</option>
