@@ -137,8 +137,8 @@ text-decoration: none;
 }
 .choose
 {
-    margin-top: 34px;
-    margin-left: 12px;
+    margin-top: 14px;
+   text-align: center;
 }
 .add{
     height: 33px;
@@ -147,4 +147,16 @@ text-decoration: none;
     border-radius: 50px;
     width: 160px;
     font-size: 17px;
+    
+}
+.added{
+    position: relative;
+    top: 14px;
+    left: 25px;
+    font-size: 17px;
+    color: rgb(0, 128, 0);
+    opacity: 0;
+}
+.added1{
+    opacity: 1;
 }

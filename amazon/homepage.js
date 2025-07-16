@@ -1,4 +1,5 @@
-const products=[{
+import { cart } from './cart.js'; // Importing the cart array from cart.js
+const products=[{ 
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image:'images/athletic-cotton-socks-6-pairs.jpg',
     name:'Black and Gray Athletic Cotton Socks -6 Pairs',
@@ -25,16 +26,16 @@ const products=[{
         count:87
     },
     pricecent:799
-}];
+}];         
 
-let productHTML=``;
+let productHTML=``;    
 
 products.forEach((product)=>
 {
     productHTML+=`<div class="item"><img src="${product.image}" height="190px">
     <div class="text">${product.name}</div>
     <div class="rating"><img src="images/rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span><div class="price">$${(product.pricecent/100).toFixed(2)}</div><div class="quantity">
-      <select name="select quantity" class="quantity1-${product.id}">
+      <select name="select quantity" class="quantity1 quantity1-${product.id}">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -47,6 +48,7 @@ products.forEach((product)=>
        <option value="10">10</option>
       </select>
     </div>
+    <div class="added added-${product.id}"><img src="images/checkmark.png" height="18px">  added</div>
     <div class="choose"><button class="add" data-product-id="${product.id}">Add to Cart</button></div>
     </div>
     </div>`;
@@ -83,5 +85,15 @@ document.querySelectorAll('.add').forEach((button)=>{
 });
 console.log(cartquantity);
 document.querySelector('.cart').innerText = cartquantity;
+const addbox=document.querySelector(`.added-${productId}`);
+addbox.classList.add('added1');
+let timeoutID;
+
+timeoutID=setTimeout(()=>{
+        addbox.classList.remove('added1');
+    },2000);
+if(timeoutID){  
+    clearTimeout(timeoutID);
+};
 });
 });
