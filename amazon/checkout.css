@@ -29,11 +29,12 @@ body{
     gap: 13px;
     flex-wrap: wrap;
 }
-.t1,.t3{
+.t,.t1,.t3{
     height: 280px;
     width: 780px;
     border: 1px solid rgba(128, 128, 128, 0.348);
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 .t2{
     height: 300px;
@@ -95,4 +96,8 @@ body{
 }
 .placebutton{
     text-align: center;
+}
+.delete,.update{
+    color: blue;
+    cursor: pointer;
 }
