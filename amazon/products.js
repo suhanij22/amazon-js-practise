@@ -34,7 +34,7 @@ export const products=[{
       stars: 5,
       count: 2197
     },
-    priceCents: 1899,
+    pricecent: 1899,
   },
   {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
@@ -44,7 +44,7 @@ export const products=[{
       stars: 4.5,
       count: 175
     },
-    priceCents: 3499,
+    pricecent: 3499,
   },
   {
     id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
@@ -54,7 +54,7 @@ export const products=[{
       stars: 4.5,
       count: 317
     },
-    priceCents: 2400
+    pricecent: 2400
 },
 {
     id: "77919bbe-0e56-475b-adde-4f24dfed3a04",
@@ -64,8 +64,9 @@ export const products=[{
       stars: 4.5,
       count: 144
     },
-    priceCents: 3599}
-,{
+    pricecent: 3599
+},
+{
     id: "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
     image: "images/liquid-laundry-detergent-plain.jpg",
     name: "Liquid Laundry Detergent, 110 Loads, 82.5 Fl Oz",
@@ -73,7 +74,7 @@ export const products=[{
       stars: 4.5,
       count: 305
     },
-    priceCents: 2899},
+    pricecent: 2899},
     {
     id: "58b4fc92-e98c-42aa-8c55-b6b79996769a",
     image: "images/knit-athletic-sneakers-gray.jpg",
@@ -82,7 +83,7 @@ export const products=[{
       stars: 4,
       count: 89
     },
-    priceCents: 3390},
+    pricecent: 3390},
 {
     id: "5968897c-4d27-4872-89f6-5bcb052746d7",
     image: "images/women-chiffon-beachwear-coverup-black.jpg",
@@ -91,7 +92,7 @@ export const products=[{
       stars: 4.5,
       count: 235
     },
-    priceCents: 2070},
+    pricecent: 2070},
     {
     id: "aad29d11-ea98-41ee-9285-b916638cac4a",
     image: "images/round-sunglasses-black.jpg",
@@ -100,6 +101,6 @@ export const products=[{
       stars: 4.5,
       count: 30
     },
-    priceCents: 1560},
+    pricecent: 1560},
 
 ];
