@@ -104,26 +104,25 @@ text-decoration: none;
   border-bottom: 1px solid rgba(128, 128, 128, 0.348);
 }
 .text{
-    margin-top: 10px;
     text-transform: capitalize;
+    height: 40px;
 }
 .rating
 {
-    margin-top: 5px;
+    height: 30px;
 }
 .comment{
-    position: relative;
-    top:  -3px;
-    left: 14px;
-    font-size: 18px;
-    color: blue;
+    color: rgb(1, 124, 182);
+  cursor: pointer;
+  margin-top: 3px;
+  margin-left: 10px;
 }
 
 .price
 {
     font-weight: bold;
-    margin-top: 8px;
     font-size: 18px;
+    height: 20px;
 }
 .quantity{
     margin-top: 9px;
@@ -137,7 +136,7 @@ text-decoration: none;
 }
 .choose
 {
-    margin-top: 14px;
+    margin-top: 7px;
    text-align: center;
 }
 .add{
@@ -159,4 +158,23 @@ text-decoration: none;
 }
 .added1{
     opacity: 1;
+}
+.box-item-details{
+    margin-top: 14px;
+}
+.box-image{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  margin-bottom: 20px;
+}
+.product-image{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.details{
+    margin-top: 22px;
 }

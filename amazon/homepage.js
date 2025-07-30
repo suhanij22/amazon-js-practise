@@ -5,9 +5,9 @@ let productHTML=``;
 
 products.forEach((product)=>
 {
-    productHTML+=`<div class="item"><img src="${product.image}" height="190px">
-    <div class="text">${product.name}</div>
-    <div class="rating"><img src="images/rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span><div class="price">$${formatCurrency(product.pricecent)}</div><div class="quantity">
+    productHTML+=`<div class="item"><div class="box-image"><img src="${product.image}" class="product-image"></div>
+  <div class="box-item-details">  <div class="text">${product.name}</div>
+   <div class="details"> <div class="rating"><img src="images/rating-${product.rating.stars*10}.png" height="23px"><span class="comment">${product.rating.count}</span></div><div class="price">$${formatCurrency(product.pricecent)}</div><div class="quantity">
       <select name="select quantity" class="quantity1 quantity1-${product.id}">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -23,6 +23,7 @@ products.forEach((product)=>
     </div>
     <div class="added added-${product.id}"><img src="images/checkmark.png" height="18px">  added</div>
     <div class="choose"><button class="add" data-product-id="${product.id}">Add to Cart</button></div>
+    </div>
     </div>
     </div>`;
 
