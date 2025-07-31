@@ -150,8 +150,8 @@ text-decoration: none;
 }
 .added{
     position: relative;
-    top: 14px;
-    left: 25px;
+    top: 8px;
+    left: 19px;
     font-size: 17px;
     color: rgb(0, 128, 0);
     opacity: 0;

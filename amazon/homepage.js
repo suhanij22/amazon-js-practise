@@ -41,7 +41,7 @@ function updateCartQuantity(){
 console.log(cartquantity);
 document.querySelector('.cart').innerText = cartquantity;
 };
-
+let timeoutID = {};
 document.querySelectorAll('.add').forEach((button)=>{
     button.addEventListener('click',()=>{
         const productId = button.dataset.productId;
@@ -49,13 +49,14 @@ document.querySelectorAll('.add').forEach((button)=>{
         updateCartQuantity();
 const addbox=document.querySelector(`.added-${productId}`);
 addbox.classList.add('added1');
-let timeoutID;
 
-timeoutID=setTimeout(()=>{
+
+
+if(timeoutID[productId]){  
+    clearTimeout(timeoutID[productId]);
+};
+timeoutID[productId]=setTimeout(()=>{
         addbox.classList.remove('added1');
     },2000);
-if(timeoutID){  
-    clearTimeout(timeoutID);
-};
 });
 });
