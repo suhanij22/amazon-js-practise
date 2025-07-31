@@ -1,6 +1,7 @@
 import { cart,addToCart } from './cart.js'; // Importing the cart array from cart.js
 import { products } from './products.js'; // Importing the products array from products.js         
 import { formatCurrency } from './utils/money.js'; // Importing the money formatting utility
+import { calculateCartQuantity } from './cart.js'; // Importing the cart quantity calculation function
 let productHTML=``;    
 
 products.forEach((product)=>
@@ -31,16 +32,11 @@ products.forEach((product)=>
 document.querySelector('.gridjs').innerHTML=productHTML;
 document.title='amazon';
 
-
 function updateCartQuantity(){
-    let cartquantity = 0;
-     console.log(cart);
-     cart.forEach((item)=>{
-     cartquantity+=item.quantity;
-});
-console.log(cartquantity);
+    const cartquantity = calculateCartQuantity();
 document.querySelector('.cart').innerText = cartquantity;
 };
+updateCartQuantity();
 let timeoutID = {};
 document.querySelectorAll('.add').forEach((button)=>{
     button.addEventListener('click',()=>{

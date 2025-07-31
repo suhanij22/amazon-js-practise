@@ -49,3 +49,10 @@ export function removeFromCart(productId){
     cart = newCart;
     savetoLocalStorage();
 };
+export function calculateCartQuantity() {
+    let cartquantity = 0;
+    cart.forEach((item) => {
+        cartquantity += item.quantity;
+    });
+    return cartquantity;
+};

@@ -2,6 +2,7 @@ import {cart} from './cart.js'; // Importing the cart array from cart.js
 import {products} from './products.js'; // Importing the products array from products.js
 import {formatCurrency} from './utils/money.js'; // Importing the money formatting utility
 import { removeFromCart } from './cart.js';
+import { calculateCartQuantity } from './cart.js'; // Importing the cart quantity calculation function
 let cartSummaryHTML='';
 
 cart.forEach((item) => {
@@ -43,5 +44,11 @@ document.querySelectorAll('.delete').forEach((link) => {
         const container = document.querySelector(`.delete-${productId}`);
         console.log(container);
         container.remove();
+        updatecount();
 });
 });
+function updatecount() {
+    const cartquantity = calculateCartQuantity();
+    document.querySelector('.item-count').innerHTML = `${cartquantity}`;
+}
+updatecount();
