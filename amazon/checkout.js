@@ -3,9 +3,12 @@ import {products} from './products.js'; // Importing the products array from pro
 import {formatCurrency} from './utils/money.js'; // Importing the money formatting utility
 import { removeFromCart } from './cart.js';
 import { calculateCartQuantity } from './cart.js'; // Importing the cart quantity calculation function
+import {deliveryOptions} from './deliveryoptions.js'; // Importing delivery options
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // Importing dayjs for date formatting
 let cartSummaryHTML='';
 
 cart.forEach((item) => {
+    const deliveryOptionID=item.deliveryOptionID;
     const productId= item.productId;
     let matchingproduct;
     products.forEach((product) => {
@@ -13,9 +16,22 @@ cart.forEach((item) => {
             matchingproduct = product;
         }
     });
+
+    let deliveryOption;
+
+    deliveryOptions.forEach((option) => {
+        if(option.id === deliveryOptionID) {
+            deliveryOption = option;
+        }
+    });
+     const today= dayjs();
+    const deliveryDate = today.add(deliveryOption.deliveryDays, 'day');
+    const formattedDate = deliveryDate.format('dddd, MMMM D');
+
     console.log(matchingproduct);
+
     cartSummaryHTML += `<div class="t1 t delete-${matchingproduct.id}">
-            <p class="head1">Delivery date: Tuesday, June 21</p>
+            <p class="head1">Delivery date: ${formattedDate}</p>
             <div class="item">
            <div class="image"> <img src="${matchingproduct.image}" height="110px"></div> 
            <div><b>${matchingproduct.name}</b>
@@ -24,16 +40,32 @@ cart.forEach((item) => {
            </div>
            <div class="option"><span style="color: black; font-weight: bold;">Choose a delivery option:</span>
             <br><br>
-            <input type="radio" class="option" name="delivery-${matchingproduct.id}" value="Tuesday, June 21">Tuesday, June 21
-            <p class="para">FREE Shipping</p>
-            <input type="radio" class="option" name="delivery-${matchingproduct.id}" value="Wednesday, June 15">Wednesday, June 15
-            <p class="para">$4.99 -Shipping</p>
-            <input type="radio" class="option" name="delivery-${matchingproduct.id}" value="Monday, June 13">Monday, June 13
-            <p class="para">$9.99 -Shipping</p>
+            ${getDeliveryOptionPrice(matchingproduct,item)}
            </div>
             </div>
         </div>`;
 });
+
+function getDeliveryOptionPrice(matchingproduct,item) {
+    let html='';
+    deliveryOptions.forEach((deliveryOption)=>{
+    const today= dayjs();
+    const deliveryDate = today.add(deliveryOption.deliveryDays, 'day');
+    const formattedDate = deliveryDate.format('dddd, MMMM D');
+    const price= deliveryOption.pricecents===0?
+    'FREE':`$${(deliveryOption.pricecents / 100).toFixed(2)}-`;
+
+        const ischecked= deliveryOption.id=== item.deliveryOptionID;
+    console.log(ischecked);
+     html += `<label><input type="radio" 
+     value="${deliveryOption.id}"
+     ${ischecked? 'checked' : ''}
+     class="option" name="delivery-${matchingproduct.id}">${formattedDate}
+            <p class="para">${price} Shipping</p></label>`;
+
+    });
+    return html;
+}
 
 document.querySelector('.cart-summary').innerHTML = cartSummaryHTML;
 
