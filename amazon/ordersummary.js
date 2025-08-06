@@ -5,7 +5,7 @@ import { removeFromCart } from './cart.js';
 import { calculateCartQuantity } from './cart.js'; // Importing the cart quantity calculation function
 import {deliveryOptions,getDeliveryOptions} from './deliveryoptions.js'; // Importing delivery options
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'; // Importing dayjs for date formatting
-
+import { renderpayment } from './payment.js';
 
 export function renderCartSummary() {
 
@@ -71,6 +71,7 @@ document.querySelectorAll('.delete').forEach((link) => {
         const container = document.querySelector(`.delete-${productId}`);
         container.remove();
         updatecount();
+        renderpayment();
 });
 });
 function updatecount() {
@@ -84,6 +85,7 @@ document.querySelectorAll('.option-js').forEach((element)=>{
         const productId = element.dataset.productId;
 const deliveryOptionID = element.dataset.deliveryOptionId;
         updatedeliveryOption(productId, deliveryOptionID);
+        renderpayment();
         renderCartSummary();
     });
 });

@@ -19,11 +19,7 @@ export function renderpayment(){
         tax = (beforetax * 10)/100; // Assuming a 10% tax rate
         total= beforetax + tax;
     });
-console.log(productpricecent);
-console.log(shippingcharge);
-console.log(beforetax);
-console.log(tax);
-console.log(total);
+
     paymentHTML= `<div class="t2">
             <p class="head1" style="color: black;">Order Summary:</p>
         <div class="summaryrow">
@@ -47,3 +43,4 @@ console.log(total);
     
     document.querySelector('.paymentcart').innerHTML= paymentHTML;
 };
+
